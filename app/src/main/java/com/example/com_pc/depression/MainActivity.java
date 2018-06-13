@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_UID, Context.MODE_PRIVATE);
         //========================get the value
         user_id = settings.getString(PREFS_UID, Defaultuser_id);
-        Toast.makeText(MainActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
         //========================================== Check the Id
         if (TextUtils.isEmpty(user_id)) {
-            Toast.makeText(MainActivity.this, "Id empty", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(MainActivity.this, "Id empty", Toast.LENGTH_SHORT).show();
             //================================ Get the number of user
             /*db.collection("users")
                     .get()
