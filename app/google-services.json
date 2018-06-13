@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "243875613998",
+    "firebase_url": "https://addepression-cdbe5.firebaseio.com",
+    "project_id": "addepression-cdbe5",
+    "storage_bucket": "addepression-cdbe5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243875613998:android:8fd24ad2d6d51ec5",
+        "android_client_info": {
+          "package_name": "com.example.com.depressiontest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243875613998-4og2t3bd316otjt6assiabqfav6dkfce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.com.depressiontest",
+            "certificate_hash": "e21e33810410152f1df87e4df6aacbaa609352c6"
+          }
+        },
+        {
+          "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcRjQ1ivxziYUXIBGVmp_dvmZqsgp_LOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243875613998:android:17306a97da877ff1",
+        "android_client_info": {
+          "package_name": "com.example.com_pc.depression"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243875613998-3272rp2urmhfljeisfg6l9l68m7jgd5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.com_pc.depression",
+            "certificate_hash": "e21e33810410152f1df87e4df6aacbaa609352c6"
+          }
+        },
+        {
+          "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcRjQ1ivxziYUXIBGVmp_dvmZqsgp_LOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243875613998-4f23u1fsudt514an3k2vg1jsgcgm3cnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

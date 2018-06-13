@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent ="true"
+        android:layout_marginTop="23dp"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:text="나이를 입력해주세요"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:layout_column="0"
+                />
+
+            <EditText
+                android:id="@+id/edinputage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:inputType="number"
+                android:hint="나이"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:paddingBottom="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="241dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="성별을 선택해 주세요" />
+
+            <RadioGroup
+                android:id="@+id/rg1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg1_y"
+                    android:layout_width="66dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="남" />
+
+                <RadioButton
+                    android:id="@+id/rg1_n"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="여" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="10dp"
+            >
+
+            <TextView
+                android:text="흡연한 경험 혹은 흡연을 하십니까?"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"/>
+            <RadioGroup
+                android:id="@+id/rg2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg2_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg2_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tr4"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:paddingBottom="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="음주를 한 경험 혹은 음주를 하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg3_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg3_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr5"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="친구들과의 관계가 좋지 않다고 생각하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg4_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg4_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr6"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="가장 친하게 지낸 친구와 멀어진 적이 있습니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg5_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg5_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr7"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="학교 선생님과의 관계가 좋지 않다고 생각하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg6_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg6_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr8"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="형제/자매 사이의 관계가 좋지 않다고 생각하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg7_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg7_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr9"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="부모님과의 관계가 좋지 않다고 생각하십니까?" />
+            <RadioGroup
+                android:id="@+id/rg8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg8_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg8_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:layout_width="232dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="부모님이 서로 부부싸움을 하신 적이 있습니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg9_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg9_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr32"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:paddingBottom="15dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="가정의 재정 상태가 좋지 않다고 생각하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg10_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg10_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr13"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="귀하께서 심하게 아프거나 다친 적이 있습니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg12_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg12_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr14"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="가족 중 심각한 질병을 앓고 있는 사람이 있습니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg13_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg13_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr15"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="부모님이 이혼 또는 별거중이십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rg14_1"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="결혼" />
+
+                <RadioButton
+                    android:id="@+id/rg14_2"
+                    android:layout_width="72dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="이혼" />
+
+                <RadioButton
+                    android:id="@+id/rg14_3"
+                    android:layout_width="72dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="사망" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tr12"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="혹은 가정의 재정 상태가 평범하다고 생각하십니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rg11_1"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="표준이하" />
+
+                <RadioButton
+                    android:id="@+id/rg11_2"
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="표준" />
+
+                <RadioButton
+                    android:id="@+id/rg11_3"
+                    android:layout_width="105dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="표준이상" />
+            </RadioGroup>
+        </TableRow>
+        <Button
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#FFFFFF"
+            android:id="@+id/diagBtn"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Finish" />
+
+    </TableLayout>
+</LinearLayout>
+
+</ScrollView>
