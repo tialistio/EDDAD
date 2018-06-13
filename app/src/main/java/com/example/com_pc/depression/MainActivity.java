@@ -44,12 +44,11 @@ public class MainActivity extends AppCompatActivity {
     public static String user_id;
 
     //=================================================
-    public static int Idnum, count;
-    public int intcounter;
-    public String counter;
+    public double counter;
     FirebaseFirestore db;
     //=================================================
     public static String deviceId;
+
 
     //
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         db = FirebaseFirestore.getInstance();
+
+
+        //Toast.makeText(MainActivity.this, "counter : " + intcounter, Toast.LENGTH_SHORT).show();
 
         //===========================================
         SharedPreferences settings = getSharedPreferences(PREFS_UID, Context.MODE_PRIVATE);
@@ -132,12 +134,27 @@ public class MainActivity extends AppCompatActivity {
         //============================== if uuid not null
         Toast.makeText(MainActivity.this, "Id not null", Toast.LENGTH_SHORT).show();
         //==================================================================
+        // get the counter
+        try {
+            db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    counter = documentSnapshot.getDouble("counter");
+                    Toast.makeText(MainActivity.this, "Main counter " + String.valueOf(counter), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //======================
         //결과 확인 Intent 이동
-        TextView resultButton = (TextView)findViewById(R.id.resultButton);
-        resultButton.setOnClickListener(new View.OnClickListener(){
+        TextView resultButton = (TextView) findViewById(R.id.resultButton);
+        resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Intent resultIntent = new Intent(MainActivity.this,ResultListActivity.class);
+            public void onClick(View view) {
+                Intent resultIntent = new Intent(MainActivity.this, ResultListActivity.class);
                 MainActivity.this.startActivity(resultIntent);
             }
         });
@@ -155,56 +172,21 @@ public class MainActivity extends AppCompatActivity {
         diagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent diagIntent = new Intent(MainActivity.this, diagnosisActivity.class);
-                MainActivity.this.startActivity(diagIntent);
+                //Toast.makeText(MainActivity.this, "counter : " + String.valueOf(counter), Toast.LENGTH_SHORT).show();
+
+                if(counter==0) {
+
+                    Intent diagIntent = new Intent(MainActivity.this, diagnosisActivity.class);
+                    MainActivity.this.startActivity(diagIntent);
+                }
+                else {
+                    Intent bdiStart = new Intent(MainActivity.this, com.example.com_pc.depression.BDITest.bdiStart.class);
+                    MainActivity.this.startActivity(bdiStart);
+                }
             }
         });
 
     }
 
-    public int get_counter() {
-        DocumentReference userRef = db.collection("users").document(user_id);
 
-        // check wether the data exist or not
-        userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if(task.isSuccessful()){
-                    //Document found in the offline cache
-                    DocumentSnapshot document = task.getResult();
-                    if(document.exists()){
-                        //Toast.makeText(MainActivity.this, "DocumentSnapshot data : " + document.getData(), Toast.LENGTH_SHORT).show();
-                        counter = document.getString("counter");
-
-                        //Toast.makeText(MainActivity.this, "counter : " + counter, Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(MainActivity.this, "Document not found", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                }
-                else{
-                    Toast.makeText(MainActivity.this, "get failde with" + task.getException(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        //========================= second way to get data
-        /*db.collection("users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                String counter = task.getResult().getString("counter");
-                Toast.makeText(MainActivity.this, "counter : " + counter, Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, "get failde with" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
-        intcounter = Integer.parseInt(counter);
-        return intcounter;
-    }
 }

@@ -3,6 +3,7 @@ package com.example.com_pc.depression.DiagnosisTest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,12 @@ import android.widget.Toast;
 
 import com.example.com_pc.depression.MainActivity;
 import com.example.com_pc.depression.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,11 +36,17 @@ public class diagnosisActivity extends AppCompatActivity {
     public static int selectedId = 0;
     public static String selected ="";
     RadioButton radioButton ;
+    public int intcounter;
+    public String counter;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnosis);
+
         //========================================== get the user id
         SharedPreferences settings = getSharedPreferences(PREFS_UID, Context.MODE_PRIVATE);
         //========================get the value
@@ -47,6 +59,7 @@ public class diagnosisActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 try{
+
                     upload_data();
                     Toast.makeText(diagnosisActivity.this, "Id = " + user_id +" succsess", Toast.LENGTH_SHORT).show();
                 }
@@ -54,16 +67,16 @@ public class diagnosisActivity extends AppCompatActivity {
                     Toast.makeText(diagnosisActivity.this, "upload failed", Toast.LENGTH_SHORT).show();
                 }
 
-                //======================================
-
                 Intent bdiStart = new Intent(diagnosisActivity.this, com.example.com_pc.depression.BDITest.bdiStart.class);
                 diagnosisActivity.this.startActivity(bdiStart);
+                //======================================
             }
         });
 
     }
 //======================================= save data in database function
-    public void save_data(String questionnum, String answer){
+
+    public void save_strdata(String questionnum, String answer){
 
         FirebaseFirestore db;
         db = FirebaseFirestore.getInstance();
@@ -71,7 +84,7 @@ public class diagnosisActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("user_data").document("user_information").update(newvalue);
+        db.collection("users").document(user_id).update(newvalue);
     }
     //=============================== save boolean
     public void save_data(String questionnum, Boolean answer){
@@ -82,7 +95,7 @@ public class diagnosisActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("user_data").document("user_information").update(newvalue);
+        db.collection("users").document(user_id).update(newvalue);
     }
 
     //==================================== set database
@@ -94,10 +107,11 @@ public class diagnosisActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("user_data").document("user_information").set(newvalue);
+        db.collection("users").document(user_id).set(newvalue, SetOptions.merge());
     }
 //======================================= upload data to database
     public void upload_data(){
+
         EditText agein = (EditText)findViewById(R.id.edinputage);
         String ages = agein.getText().toString();
         int age = Integer.parseInt(ages);
@@ -110,6 +124,7 @@ public class diagnosisActivity extends AppCompatActivity {
         radioButtonID = rg1.getCheckedRadioButtonId();
         radioButton = (RadioButton)findViewById(radioButtonID);
 
+
        String value = radioButton.getText().toString();
        if(value.equals("남")){
            value = "male";
@@ -117,7 +132,7 @@ public class diagnosisActivity extends AppCompatActivity {
        else {
            value = "female";
        }
-       save_data("gender", value);
+       save_strdata("gender", value);
 
         //===================yes no question save
         //Question 3
@@ -188,7 +203,7 @@ public class diagnosisActivity extends AppCompatActivity {
         else {
             value = "died";
         }
-        save_data("parentsMartialStatus", value);
+        save_strdata("parentsMartialStatus", value);
 
         //Question 15
         RadioGroup rg11 = (RadioGroup)findViewById(R.id.rg11);
@@ -205,8 +220,13 @@ public class diagnosisActivity extends AppCompatActivity {
         else {
             value = "below average";
         }
-        save_data("parentsMartialStatus", value);
+        save_strdata("livingStandard", value);
 
+        //Question 16
+        RadioGroup rg16 = (RadioGroup)findViewById(R.id.rg16);
+        radioButtonID = rg16.getCheckedRadioButtonId();
+        radioButton = (RadioButton)findViewById(radioButtonID);
+        cek_value("breakup", radioButtonID);
 
     }
 
@@ -224,5 +244,6 @@ public class diagnosisActivity extends AppCompatActivity {
 
         save_data(question, answr);
     }
+
 }
 

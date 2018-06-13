@@ -4,58 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".manualActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:bottom="1dp"
-        android:left="1dp"
-        android:orientation="vertical"
-        android:right="1dp"
-        android:top="1dp">
-
+        android:layout_width="wrap_content"
+        android:layout_height="501dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="사용 설명서"
             android:layout_gravity="center"
-            android:paddingTop="20dp"
-            android:text="청소년 온라인 우울증 자가 진단"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
-            android:layout_width="374dp"
-            android:layout_height="153dp"
-            android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
             android:paddingTop="5dp"
-            android:text="이 프로그램은 3주에 걸쳐 진행됩니다.
-1. 첫번 째 진단은 ~"
-            android:textSize="15dp" />
+            android:paddingLeft="5dp"
+            android:padding="5dp"
+            android:text="우울증은 자가 진단을 통해 조기에 발견하고 적절한 정신치료와 약물치료를 받으면 완쾌할 수 있습니다. 많은 사람들은 우울증은 치료가 가능함에도 불구하고 일반대중의 편견으로 정신과 의사를 찾아 진료를 보는 비율이 높지 않으며, 이로 인해 치료가 지연되어 심가가한 부작용이 발생됩니다. 지금 바로 우울증을 진단해보세요 "
+            android:textColor="#696969"
+            android:background="@drawable/back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:text="본 진단은 BDI 척도와 Armenia 청소년 우울 위험 요인 자료를 참고하여 개발되었으며, 정확한 진단을 위해 3주간 진행됩니다. 우울증 위험요소 진단 1회, BDI 진단 3회, 총 진단 4번의 결과를 계산하여 3주 후에 결과를 확인하실 수 있습니다. 본 진단 프로그램은 참고용으로 사용하시기 바라며, 정확한 진단을 위해서는 전문 기관을 방문하여 상담 받으시기 바랍니다." />
 
         <TextView
-            android:layout_width="374dp"
-            android:layout_height="153dp"
+            android:id="@+id/txtLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="20dp"
-            android:text="우울증은 자가 진단 등을 통해 조기에 발견하고 정신 치료와 약물 치료를 받으면 완쾌될 수 있습니다. 많은 사람들은 우울증 치료가 가능함에도 불구하고 일반 대중의 편견으로 정신과 의사를 찾아 진료를 보는 비율이 높지 않으며, 이로 인해 치료가 지연되어 심각한 결과를 초래할 수 있습니다. 지금 바로 우울증을 쉽게 자가 진단 해보세요"
-            android:textSize="15dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:text="정신 건강 상담 센터 홈페이지로 이동하기" />
 
         <TextView
-            android:layout_width="374dp"
-            android:layout_height="96dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="보건 복지부 129 / 정신건강상담센터 1577-0119"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
-            android:text="본 프로그램은 참고용으로만 사용하시고 정확한 치료를 위해서는 아래의 전화번호로 상담을 받으시거나, 의사를 찾아 진료를 받으시기 바랍니다.
-
-보건복지부 129 정신건강상담센터 1577-0119"
-            android:textSize="15dp" />
+            android:textSize="10dp"
+            android:text="Copyright 2018 Sunmoon. All Rights Reserved"/>
     </LinearLayout>
 </LinearLayout>

@@ -16,9 +16,16 @@ import android.widget.Toast;
 
 import com.example.com_pc.depression.MainActivity;
 import com.example.com_pc.depression.R;
+import com.example.com_pc.depression.ResultListActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.firestore.Transaction;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +44,17 @@ public class bdiActivity extends AppCompatActivity {
     public static int selectedId = 0;
     public static String selected ="";
     View radioButton ;
+
+    FirebaseFirestore db ;
+    public double counterbdi;
+    double counterbdinside;
+    public String BDIname;
+    public int bdiname;
+
+    public int bdiname1;
+    MainActivity main = new MainActivity();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +63,57 @@ public class bdiActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_UID, Context.MODE_PRIVATE);
         //========================get the value
         user_id = settings.getString(PREFS_UID, Defaultuser_id);
+        db = FirebaseFirestore.getInstance();
+        //=================================================================================
 
         //==================================================================================
+
         TextView bdiBtn = (TextView)findViewById(R.id.btnext_bdiBtn1);
         bdiBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+
+                //====================== upload the date
+                db = FirebaseFirestore.getInstance();
+                Date currentTime = Calendar.getInstance().getTime();
+                String date = currentTime.toString();
+                bdi_save_stringdata("date", date);
+
+                //======================
+
                 bdiSum = 0;
                 upload_score();
-                Toast.makeText(bdiActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
-                Intent bdiIntent2 = new Intent(bdiActivity.this,bdiFinish.class);
-                bdiActivity.this.startActivity(bdiIntent2);
+                //update_counter();
+
+                // get the counter
+
+                db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        counterbdi = documentSnapshot.getDouble("counter");
+
+                        counterbdi = counterbdi + 1;
+                        Toast.makeText(bdiActivity.this, "Main counter " + String.valueOf(counterbdi), Toast.LENGTH_SHORT).show();
+
+                        Map<String, Object> newvalue = new HashMap<>();
+                        newvalue.put("counter", counterbdi);
+
+                        db.collection("users").document(user_id).update(newvalue);
+
+                        if(counterbdi >= 3.0){
+                            Intent resultIntent = new Intent(bdiActivity.this, ResultListActivity.class);
+                            bdiActivity.this.startActivity(resultIntent);
+                        }else {
+                            Intent bdiIntent2 = new Intent(bdiActivity.this,bdiFinish.class);
+                            bdiActivity.this.startActivity(bdiIntent2);
+                        }
+                    }
+                });
+
+
+                //======================
+                //Toast.makeText(bdiActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
+
             }
         });
 //============================================================================================
@@ -74,10 +132,6 @@ public class bdiActivity extends AppCompatActivity {
     }
 
     public void upload_score(){
-
-        Date currentTime = Calendar.getInstance().getTime();
-        String date = currentTime.toString();
-        bdi_save_stringdata("date", date);
 
         RadioGroup gr1 = (RadioGroup)findViewById(R.id.gr1);
         radioButtonID = gr1.getCheckedRadioButtonId();
@@ -254,48 +308,98 @@ public class bdiActivity extends AppCompatActivity {
 
     }
 
-    public void bdi_set_data(String questionnum, int answer){
+    public void bdi_set_data(final String questionnum1, final int answer1){
+        db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                counterbdinside = documentSnapshot.getDouble("counter");
+                counterbdinside = counterbdinside + 1.0;
+                Toast.makeText(bdiActivity.this, "Inside the set_data " + String.valueOf(counterbdinside), Toast.LENGTH_SHORT).show();
 
-        if(answer==-1){
-            answer=0;
-        }
-        FirebaseFirestore db;
-        db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> newvalue = new HashMap<>();
-        newvalue.put(questionnum, answer);
+                String field2 = questionnum1;
+                int answerin2 = answer1;
+                db = FirebaseFirestore.getInstance();
+                Map<String, Object> newvalue = new HashMap<>();
+                newvalue.put(field2, answerin2);
+                if(counterbdinside==1.0) {
+                    db.collection("users").document(user_id).collection("BDI1").document("answer").update(newvalue);
+                }
+                else if(counterbdinside==2.0){
+                    db.collection("users").document(user_id).collection("BDI2").document("answer").update(newvalue);
+                }
+                else {
+                    db.collection("users").document(user_id).collection("BDI3").document("answer").update(newvalue);
+                }
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue);
+            }
+        });
 
     }
 
-    public void bdi_save_data(String questionnum, int answer){
+    public void bdi_save_data(final String questionnum2, final int answer2){
+        db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                counterbdinside = documentSnapshot.getDouble("counter");
+                counterbdinside = counterbdinside + 1.0;
+                Toast.makeText(bdiActivity.this, "Inside the set_data " + String.valueOf(counterbdinside), Toast.LENGTH_SHORT).show();
 
-        if(answer==-1){
-            answer=0;
-        }
-        FirebaseFirestore db;
-        db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> newvalue = new HashMap<>();
-        newvalue.put(questionnum, answer);
+                String field2 = questionnum2;
+                int answerin2 = answer2;
+                db = FirebaseFirestore.getInstance();
+                Map<String, Object> newvalue = new HashMap<>();
+                newvalue.put(field2, answerin2);
+                if(counterbdinside==1.0) {
+                    db.collection("users").document(user_id).collection("BDI1").document("answer").update(newvalue);
+                }
+                else if(counterbdinside==2.0){
+                    db.collection("users").document(user_id).collection("BDI2").document("answer").update(newvalue);
+                }
+                else {
+                    db.collection("users").document(user_id).collection("BDI3").document("answer").update(newvalue);
+                }
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").update(newvalue);
-
+            }
+        });
     }
 
-    public void bdi_save_stringdata(String questionnum, String answer){
 
-        FirebaseFirestore db;
-        db = FirebaseFirestore.getInstance();
+    public void bdi_save_stringdata(final String questionnum, final String answer){
+            db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    counterbdinside = documentSnapshot.getDouble("counter");
+                    counterbdinside = counterbdinside + 1.0;
+                    Toast.makeText(bdiActivity.this, "Inside the set_data " + String.valueOf(counterbdinside), Toast.LENGTH_SHORT).show();
 
-        Map<String, Object> newvalue = new HashMap<>();
-        newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue);
+                    String field = questionnum;
+                    String answerin = answer;
+                    db = FirebaseFirestore.getInstance();
+                    Map<String, Object> newvalue = new HashMap<>();
+                    newvalue.put(field, answer);
+                    if(counterbdinside==1.0) {
+                        db.collection("users").document(user_id).collection("BDI1").document("answer").set(newvalue);
+                    }
+                    else if(counterbdinside==2.0){
+                        db.collection("users").document(user_id).collection("BDI2").document("answer").set(newvalue);
+                    }
+                    else {
+                        db.collection("users").document(user_id).collection("BDI3").document("answer").set(newvalue);
+                    }
+
+                }
+            });
+
+        //Toast.makeText(bdiActivity.this, "inside counter name= " + String.valueOf(counterbdinside), Toast.LENGTH_SHORT).show();
+
 
     }
     public void add_sum(int score){
         bdiSum = bdiSum + score ;
     }
+
+
 }
