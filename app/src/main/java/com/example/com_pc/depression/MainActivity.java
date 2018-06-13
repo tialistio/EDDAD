@@ -44,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public static String user_id;
 
     //=================================================
-    public static int Idnum, count;
-    public int intcounter;
-    double counter;
+    public double counter;
     FirebaseFirestore db;
     //=================================================
     public static String deviceId;
@@ -106,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             //Make a HashMap<>
             Map<String, Object> newUser = new HashMap<>();
             newUser.put("user_id", uuid);
-            newUser.put("counter", "0");
+            newUser.put("counter", 0);
             //=======================put it into preferences
             settings = getSharedPreferences(PREFS_UID, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = settings.edit();
@@ -136,6 +134,20 @@ public class MainActivity extends AppCompatActivity {
         //============================== if uuid not null
         Toast.makeText(MainActivity.this, "Id not null", Toast.LENGTH_SHORT).show();
         //==================================================================
+        // get the counter
+        try {
+            db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    counter = documentSnapshot.getDouble("counter");
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //======================
         //결과 확인 Intent 이동
         TextView resultButton = (TextView) findViewById(R.id.resultButton);
         resultButton.setOnClickListener(new View.OnClickListener() {
@@ -159,18 +171,6 @@ public class MainActivity extends AppCompatActivity {
         diagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            counter = documentSnapshot.getDouble("counter");
-                        }
-                    });
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-
                 //Toast.makeText(MainActivity.this, "counter : " + String.valueOf(counter), Toast.LENGTH_SHORT).show();
 
                 if(counter==0) {

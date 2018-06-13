@@ -36,11 +36,10 @@ public class diagnosisActivity extends AppCompatActivity {
     public static int selectedId = 0;
     public static String selected ="";
     RadioButton radioButton ;
-
     public int intcounter;
     public String counter;
 
-    MainActivity main = new MainActivity();
+
 
 
     @Override

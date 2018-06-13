@@ -18,8 +18,12 @@ import com.example.com_pc.depression.MainActivity;
 import com.example.com_pc.depression.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.firestore.Transaction;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -38,6 +42,15 @@ public class bdiActivity extends AppCompatActivity {
     public static int selectedId = 0;
     public static String selected ="";
     View radioButton ;
+
+    FirebaseFirestore db ;
+    public static double counter;
+    public String BDIname;
+    public int bdiname;
+
+    public int bdiname1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +60,78 @@ public class bdiActivity extends AppCompatActivity {
         //========================get the value
         user_id = settings.getString(PREFS_UID, Defaultuser_id);
 
+        //=================================================================================
+
         //==================================================================================
+        // get the counter
+        /*try {
+            db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    counter = documentSnapshot.getDouble("counter");
+
+                    //Toast.makeText(bdiActivity.this, "counter = "+ String.valueOf(counter), Toast.LENGTH_SHORT).show();
+
+                    counter = counter + 1 ;
+
+                    Map<String, Object> newvalue = new HashMap<>();
+                    newvalue.put("counter", counter);
+
+                    db.collection("users").document(user_id).update(newvalue);
+
+                    // Make the BDI name
+
+
+                    Toast.makeText(bdiActivity.this, "BDIname = "+ counter, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+*/
+        //======================
         TextView bdiBtn = (TextView)findViewById(R.id.btnext_bdiBtn1);
         bdiBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                // get the counter
+                try {
+                    db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            counter = documentSnapshot.getDouble("counter");
+
+                            //Toast.makeText(bdiActivity.this, "counter = "+ String.valueOf(counter), Toast.LENGTH_SHORT).show();
+
+                            counter = counter + 1 ;
+
+                            Map<String, Object> newvalue = new HashMap<>();
+                            newvalue.put("counter", counter);
+
+                            db.collection("users").document(user_id).update(newvalue);
+
+                            // Make the BDI name
+
+
+                            Toast.makeText(bdiActivity.this, "BDIname = "+ counter, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                //====================== upload the date
+                db = FirebaseFirestore.getInstance();
+                Date currentTime = Calendar.getInstance().getTime();
+                String date = currentTime.toString();
+                //bdi_save_stringdata("date", date);
+
+                //======================
                 bdiSum = 0;
                 upload_score();
+                //update_counter();
                 Toast.makeText(bdiActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
                 Intent bdiIntent2 = new Intent(bdiActivity.this,bdiFinish.class);
                 bdiActivity.this.startActivity(bdiIntent2);
@@ -75,10 +153,6 @@ public class bdiActivity extends AppCompatActivity {
     }
 
     public void upload_score(){
-
-        Date currentTime = Calendar.getInstance().getTime();
-        String date = currentTime.toString();
-        bdi_save_stringdata("date", date);
 
         RadioGroup gr1 = (RadioGroup)findViewById(R.id.gr1);
         radioButtonID = gr1.getCheckedRadioButtonId();
@@ -266,7 +340,16 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
+
+        if(counter==1.0) {
+            db.collection("users").document(user_id).collection("BDI1").document("answer").set(newvalue);
+        }
+        else if(counter==2.0){
+            db.collection("users").document(user_id).collection("BDI2").document("answer").set(newvalue);
+        }
+        else {
+            db.collection("users").document(user_id).collection("BDI3").document("answer").set(newvalue);
+        }
 
     }
 
@@ -281,7 +364,16 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
+
+        if(counter==1.0) {
+            db.collection("users").document(user_id).collection("BDI1").document("answer").update(newvalue);
+        }
+        else if(counter==2.0){
+            db.collection("users").document(user_id).collection("BDI2").document("answer").update(newvalue);
+        }
+        else {
+            db.collection("users").document(user_id).collection("BDI3").document("answer").update(newvalue);
+        }
 
     }
 
@@ -294,10 +386,21 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
+        Toast.makeText(bdiActivity.this, "inside counter = " + counter, Toast.LENGTH_SHORT).show();
+        if(counter==1.0) {
+            db.collection("users").document(user_id).collection("BDI1").document("answer").set(newvalue);
+        }
+        else if(counter==2.0){
+            db.collection("users").document(user_id).collection("BDI2").document("answer").set(newvalue);
+        }
+        else {
+            db.collection("users").document(user_id).collection("BDI3").document("answer").set(newvalue);
+        }
 
     }
     public void add_sum(int score){
         bdiSum = bdiSum + score ;
     }
+
+
 }

@@ -1,931 +1,329 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:paddingTop="10dp"
-            android:layout_width="80dp"
-            android:layout_height="15dp"
-            android:text="벡 우울 척도 "
-            android:textSize="20dp"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1."
-            android:textSize="15dp" />
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr1">
-
-            <RadioButton
-                android:id="@+id/bdiBtn1_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 슬프지 않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn1_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 슬프다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn1_3"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 항상 슬프고 기운을 낼 수 없다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn1_4"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 너무나 슬프고 불행해서 도저히 견딜 수 없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="2."
-            android:textSize="15dp" />
-
-        <RadioGroup
-            android:id="@+id/gr2"
-            android:layout_width="415dp"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/bdiBtn2_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 앞날에 대해서 별로 낙심하지 않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn2_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 앞날에 대해서 용기가 나지 않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn2_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 앞날에 대해 기대할 것이 아무것도 없다고 느낀다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn2_4"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 앞날은 아주 절망적이고 나아질 가망이 없다고 느낀다."
-                android:textSize="10dp" />
-        </RadioGroup>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="3."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr3">
-
-            <RadioButton
-                android:id="@+id/bdiBtn3_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 실패자라고 느끼지 않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn3_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 보통사람들보다 더 많이 실패한 것 같다. "
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn3_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="내가 살아온 과거를 뒤돌아 보면, 실패투성이인 것 같다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn3_4"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 인간으로서 완전한 실패자라고 느낀다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr4">
-
-            <RadioButton
-                android:id="@+id/bdiBtn4_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 전과같이 일상생활에 만족하고 있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn4_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나의 일상생활은 예전처럼 즐겁지 않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn4_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 요즘에는 어떤 것에서도 별로 만족을 얻지 못한다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn4_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는 모든 것이 다 불만스럽고 싫증난다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5."
-            android:textSize="15dp" />
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr5">
-
-            <RadioButton
-                android:id="@+id/bdiBtn5_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는특별히죄책감을느끼지않는다. "
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn5_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는죄책감을느낄때가많다. "
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn5_3"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는죄책감을느낄때가아주많다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn5_4"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는항상죄책감에시달리고있다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="6."
-            android:textSize="15dp" />
-
-        <RadioGroup
-            android:id="@+id/gr6"
-            android:layout_width="415dp"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/bdiBtn6_1"
-                android:layout_width="415dp"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는벌을받고있다고느끼지않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn6_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나는어쩌면벌을받을지도모른다는느낌이든다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn6_3"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는벌을받을것같다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn6_4"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 나는지금벌을받고있다고느낀다."
-                android:textSize="10dp" />
-        </RadioGroup>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="7."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr7">
-
-            <RadioButton
-                android:id="@+id/bdiBtn7_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나자신에게실망하지않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn7_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나자신에게실망하고있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn7_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나자신에게화가난다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn7_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는나자신을증오한다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="8."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr8">
-
-            <RadioButton
-                android:id="@+id/bdiBtn8_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 내가다른사람보다못한것같지는않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn8_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나의약점이나실수에대해서나자신을탓하는편이다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn8_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="내가한일이잘못되었을때는언제나나를탓한다"
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn8_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="일어나는모든나쁜일들은다내탓이다."
-                android:textSize="10dp" />
-        </RadioGroup>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="5."
-            android:textSize="15dp" />
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr9">
-
-            <RadioButton
-                android:id="@+id/bdiBtn9_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는자살같은것은생각하지않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn9_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는자살할생각을가끔하지만, 실제로하지는않을것이다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn9_3"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 자살하고싶은생각이자주든다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn9_4"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는기회만있으면자살하겠다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="10."
-            android:textSize="15dp" />
-
-        <RadioGroup
-            android:id="@+id/gr10"
-            android:layout_width="415dp"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/bdiBtn10_1"
-                android:layout_width="415dp"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는평소보다더울지는않는다"
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn10_2"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전보다더많이운다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn10_3"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text=" 나는요즈음항상운다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn10_4"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전에는울고싶을때울수있었지만요즈음은울래야울기력조차없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="11."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr11">
-
-            <RadioButton
-                android:id="@+id/bdiBtn11_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는요즈음평소보다더짜증을내는편은아니다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn11_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는요즈음항상짜증이나고귀찮아진다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn11_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는요즈음항상짜증을내고있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn11_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="전에는짜증스럽던일에요즘은너무지쳐서짜증조차나지않는다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="12."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr12">
-
-            <RadioButton
-                android:id="@+id/bdiBtn12_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는다른사람들에대한관심을잃지않고있다"
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn12_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 나는전보다다른사람들에대한관심이줄었다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn12_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는다른사람들에대한관심이거의없어졌다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn12_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는다른사람들에대한관심이완전히없어졌다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="13."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr13">
-
-            <RadioButton
-                android:id="@+id/bdiBtn13_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는평소처럼결정을잘내린다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn13_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 나는결정을미루는때가전보다더많다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn13_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전에비해결정내리는데에더큰어려움을느낀다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn13_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는더이상아무결정도내릴수가없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="14."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr14">
-
-            <RadioButton
-                android:id="@+id/bdiBtn14_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전보다내모습이나빠졌다고느끼지않는다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn14_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는나이들어보이거나매력없이보일까봐걱정한다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn14_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는매모습이매력없게변해버린것같은느낌이든다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn14_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는내가추하게보인다고믿는다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="15."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr15">
-
-            <RadioButton
-                android:id="@+id/bdiBtn15_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전처럼일을할수있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn15_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="어떤일을시작하는데에전보다더많은노력이든다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn15_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="무슨일이든하려면나자신을매우심하게채찍질해야만한다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn15_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는전혀아무일도할수가없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="16."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr16">
-
-            <RadioButton
-                android:id="@+id/bdiBtn16_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는평소처럼잠을잘수있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn16_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전에만큼잠을자지는못한다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn16_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전보다한두시간일찍깨고다시잠들기어렵다. "
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn16_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는평소보다몇시간이나일찍깨고, 한번깨면다시잠들수없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="17."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr17">
-
-            <RadioButton
-                android:id="@+id/bdiBtn17_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는평소보다더피곤하지는않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn17_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는전보다더쉽게피곤해진다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn17_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는무엇을해도피곤해진다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn17_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는너무나피곤해서아무일도할수없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="18."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr18">
-
-            <RadioButton
-                android:id="@+id/bdiBtn18_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="내식욕은평소와다름없다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn18_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는요즈음전보다식욕이좋지않다. "
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn18_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는요즈음식욕이많이떨어졌다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn18_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="요즈음에는전혀식욕이없다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="19."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr19">
-
-            <RadioButton
-                android:id="@+id/bdiBtn19_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="요즈음체중이별로줄지않았다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn19_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="전보다몸무게가2Kg가량줄었다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn19_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="전보다몸무게가5Kg가량줄었다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn19_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="전보다몸무게가7Kg가량줄었다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="20."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr20">
-
-            <RadioButton
-                android:id="@+id/bdiBtn20_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 건강에 대해 전보다 더 염려하고 있지는 않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn20_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 여러 가지 통증, 소화불량, 변비 등과 같은 신체적인 문제로 걱정하고 있다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn20_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 건강이 염려되어 다른 일은 생각하기 힘들다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn20_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는 건강이 너무 염려되어 다른 일은 아무 것도 생각할 수 없다"
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="21."
-            android:textSize="15dp"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gr21">
-
-            <RadioButton
-                android:id="@+id/bdiBtn21_1"
-                android:layout_width="415dp"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 요즈음 성에 대한 관심에 별다른 변화가 있는 것 같지는 않다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn21_2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text=" 나는 전보다 성(sex)에 대한 관심이 줄었다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn21_3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:paddingLeft="5dp"
-                android:text="나는 전보다 성(sex)에 대한 관심이 상당히 줄었다."
-                android:textSize="10dp" />
-
-            <RadioButton
-                android:id="@+id/bdiBtn21_4"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:paddingLeft="5dp"
-                android:text="나는 성(sex)에 대한 관심을 완전히 잃었다."
-                android:textSize="10dp" />
-        </RadioGroup>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnext_bdiBtn1"
-            android:layout_gravity="right"
-            android:text="Finish"
-            android:layout_column="1"
-            />
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <ScrollView android:layout_height="match_parent" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    -<LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="369dp" android:textSize="18dp" android:textColor="#FF7777" android:text="벡 우울 척도 (Beck's Depression Inventory)" android:paddingTop="10dp" android:paddingLeft="20dp" android:paddingBottom="10dp" android:layout_marginTop="10dp" android:layout_marginRight="10dp" android:layout_marginLeft="10dp" android:layout_gravity="center"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="1번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr1">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 슬프지 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn1_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 슬프다." android:paddingLeft="5dp" android:id="@+id/bdiBtn1_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 항상 슬프고 기운을 낼 수 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn1_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 너무나 슬프고 불행해서 도저히 견딜 수 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn1_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="2번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="415dp" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr2">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 앞날에 대해서 별로 낙심하지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn2_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 앞날에 대해서 용기가 나지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn2_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 앞날에 대해 기대할 것이 아무것도 없다고 느낀다." android:paddingLeft="5dp" android:id="@+id/bdiBtn2_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="295dp" android:textSize="10dp" android:text="나는 앞날은 아주 절망적이고 나아질 가망이 없다고 느낀다." android:paddingLeft="5dp" android:id="@+id/bdiBtn2_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="3번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr3">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 실패자라고 느끼지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn3_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 보통사람들보다 더 많이 실패한 것 같다. " android:paddingLeft="5dp" android:id="@+id/bdiBtn3_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="내가 살아온 과거를 뒤돌아 보면, 실패투성이인 것 같다." android:paddingLeft="5dp" android:id="@+id/bdiBtn3_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 인간으로서 완전한 실패자라고 느낀다." android:paddingLeft="5dp" android:id="@+id/bdiBtn3_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="4번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr4">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 전과같이 일상생활에 만족하고 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn4_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나의 일상생활은 예전처럼 즐겁지 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn4_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 요즘에는 어떤 것에서도 별로 만족을 얻지 못한다." android:paddingLeft="5dp" android:id="@+id/bdiBtn4_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 모든 것이 다 불만스럽고 싫증난다." android:paddingLeft="5dp" android:id="@+id/bdiBtn4_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="5번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr5">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 특별히 죄책감을 느끼지않는다. " android:paddingLeft="5dp" android:id="@+id/bdiBtn5_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 죄책감을 느낄 때가 많다. " android:paddingLeft="5dp" android:id="@+id/bdiBtn5_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 죄책감을 느낄 때가 아주 많다." android:paddingLeft="5dp" android:id="@+id/bdiBtn5_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 항상 죄책감에 시달리고 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn5_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="6번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="415dp" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr6">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 벌을 받고 있다고 느끼지않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn6_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 어쩌면 벌을 받을지도 모른다는 느낌이 든다." android:paddingLeft="5dp" android:id="@+id/bdiBtn6_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 벌을 받을 것 같다." android:paddingLeft="5dp" android:id="@+id/bdiBtn6_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="wrap_content" android:textSize="10dp" android:text="나는 지금 벌을 받고 있다고 느낀다." android:paddingLeft="5dp" android:id="@+id/bdiBtn6_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="7번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr7">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 나 자신에게 실망하지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn7_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 나 자신에게 실망하고 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn7_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 나 자신에게 화가난다." android:paddingLeft="5dp" android:id="@+id/bdiBtn7_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 나 자신을 증오한다." android:paddingLeft="5dp" android:id="@+id/bdiBtn7_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="8번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr8">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="내가 다른 사람보다 못한 것 같지는 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn8_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 나의 약점이나 실수에 대해서 나 자신을 탓하는 편이다." android:paddingLeft="5dp" android:id="@+id/bdiBtn8_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="내가 한 일이 잘못되었을 때는 언제나 나를 탓한다" android:paddingLeft="5dp" android:id="@+id/bdiBtn8_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="일어나는 모든 나쁜 일들은 다 내 탓이다." android:paddingLeft="5dp" android:id="@+id/bdiBtn8_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="9번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr9">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 자살같은 것은 생각하지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn9_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 자살 할 생각을 가끔하지만, 실제로 하지는 않을 것이다." android:paddingLeft="5dp" android:id="@+id/bdiBtn9_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="자살하고 싶은 생각이 자주 든다." android:paddingLeft="5dp" android:id="@+id/bdiBtn9_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 기회만 있으면 자살하겠다." android:paddingLeft="5dp" android:id="@+id/bdiBtn9_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="10번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="415dp" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr10">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 평소보다 더 울지는 않는다" android:paddingLeft="5dp" android:id="@+id/bdiBtn10_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 전보다 더 많이 운다." android:paddingLeft="5dp" android:id="@+id/bdiBtn10_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text=" 나는 요즘 항상 운다." android:paddingLeft="5dp" android:id="@+id/bdiBtn10_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="wrap_content" android:textSize="10dp" android:text="나는 전에는 울고싶을 때 울 수 있었지만 요즘은 울래야 울 기력조차 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn10_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="11번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr11">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 요즘 평소보다 더 짜증을 내는 편은 아니다." android:paddingLeft="5dp" android:id="@+id/bdiBtn11_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 요즘 항상 짜증이 나고 귀찮아진다." android:paddingLeft="5dp" android:id="@+id/bdiBtn11_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 요즘 항상 짜증을 내고 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn11_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="전에는 짜증스럽던 일에 요즘은 너무 지쳐서 짜증조차 나지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn11_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="12번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr12">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 다른 사람들에 대한 관심을 잃지 않고있다" android:paddingLeft="5dp" android:id="@+id/bdiBtn12_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전보다 다른 사람들에 대한 관심이 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn12_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 다른 사람들에 대한 관심이 거의 없어졌다." android:paddingLeft="5dp" android:id="@+id/bdiBtn12_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 다른 사람들에 대한 관심이 완전히 없어졌다." android:paddingLeft="5dp" android:id="@+id/bdiBtn12_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="13번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr13">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 평소처럼 결정을 잘 내린다." android:paddingLeft="5dp" android:id="@+id/bdiBtn13_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 결정을 미루는 때가 전보다 더 많다." android:paddingLeft="5dp" android:id="@+id/bdiBtn13_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전에 비해 결정내리는 데에 더 큰 어려움을 느낀다." android:paddingLeft="5dp" android:id="@+id/bdiBtn13_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 더 이상 아무 결정도 내릴 수가 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn13_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="14번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr14">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 전보다 내 모습이 나빠졌다고 느끼지 않는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn14_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 나이들어보이거나 매력없이 보일까봐 걱정 한다." android:paddingLeft="5dp" android:id="@+id/bdiBtn14_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 매 모습이 매력없게 변해버린 것 같은 느낌이 든다." android:paddingLeft="5dp" android:id="@+id/bdiBtn14_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 내가 추하게 보인다고 믿는다." android:paddingLeft="5dp" android:id="@+id/bdiBtn14_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="15번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr15">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 전처럼 일을 할 수 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn15_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="어떤 일을 시작하는 데에 전보다 더 많은 노력이 든다." android:paddingLeft="5dp" android:id="@+id/bdiBtn15_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="무슨 일이든 하려면 나 자신을 매우 심하게 채찍질 해야만한다." android:paddingLeft="5dp" android:id="@+id/bdiBtn15_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전혀 아무 일도 할 수가 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn15_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="16번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr16">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 평소처럼 잠을 잘 수 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn16_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전에만큼 잠을 자지는 못한다." android:paddingLeft="5dp" android:id="@+id/bdiBtn16_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전보다 한 두시간 일찍 깨고 다시 잠들기 어렵다. " android:paddingLeft="5dp" android:id="@+id/bdiBtn16_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 평소보다 몇 시간이나 일찍 깨고, 한번 깨면 다시 잠들 수 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn16_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="17번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr17">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 평소보다 더 피곤하지는 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn17_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전보다 더 쉽게 피곤해진다." android:paddingLeft="5dp" android:id="@+id/bdiBtn17_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 무엇을 해도 피곤해진다." android:paddingLeft="5dp" android:id="@+id/bdiBtn17_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 너무나 피곤해서 아무 일도 할 수없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn17_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="18번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr18">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="내 식욕은 평소와 다름 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn18_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 요즘 전보다 식욕이 좋지 않다. " android:paddingLeft="5dp" android:id="@+id/bdiBtn18_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 요즘 식욕이 많이 떨어졌다." android:paddingLeft="5dp" android:id="@+id/bdiBtn18_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="요즘에는 전혀 식욕이 없다." android:paddingLeft="5dp" android:id="@+id/bdiBtn18_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="19번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr19">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="요즘 체중이 별로 줄지 않았다." android:paddingLeft="5dp" android:id="@+id/bdiBtn19_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="전보다 몸무게가 2Kg가량 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn19_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="전보다 몸무게가 5Kg가량 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn19_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="전보다 몸무게가 7Kg가량 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn19_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="20번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr20">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 건강에 대해 전보다 더 염려하고 있지는 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn20_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 여러 가지 통증, 소화불량, 변비 등과 같은 신체적인 문제로 걱정하고 있다." android:paddingLeft="5dp" android:id="@+id/bdiBtn20_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 건강이 염려되어 다른 일은 생각하기 힘들다." android:paddingLeft="5dp" android:id="@+id/bdiBtn20_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 건강이 너무 염려되어 다른 일은 아무 것도 생각할 수 없다" android:paddingLeft="5dp" android:id="@+id/bdiBtn20_4"/>
+
+</RadioGroup>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="93dp" android:textSize="15dp" android:textColor="#FF7777" android:text="21번 문항" android:paddingLeft="20dp" android:layout_marginTop="30dp" android:layout_marginLeft="30dp" android:background="#E5E5E5"/>
+
+
+    -<RadioGroup android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="10dp" android:paddingLeft="25dp" android:id="@+id/gr21">
+
+    <RadioButton android:layout_height="25dp" android:layout_width="415dp" android:textSize="10dp" android:text="나는 요즈음 성에 대한 관심에 별다른 변화가 있는 것 같지는 않다." android:paddingLeft="5dp" android:id="@+id/bdiBtn21_1"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전보다 성(sex)에 대한 관심이 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn21_2"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 전보다 성(sex)에 대한 관심이 상당히 줄었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn21_3"/>
+
+    <RadioButton android:layout_height="25dp" android:layout_width="match_parent" android:textSize="10dp" android:text="나는 성(sex)에 대한 관심을 완전히 잃었다." android:paddingLeft="5dp" android:id="@+id/bdiBtn21_4"/>
+
+</RadioGroup>
+
+    <Button android:layout_height="wrap_content" android:layout_width="135dp" android:textColor="#FFFFFF" android:text="Finish" android:layout_marginTop="50dp" android:layout_marginRight="50dp" android:layout_marginLeft="50dp" android:layout_gravity="center" android:background="@color/colorPrimaryDark" android:id="@+id/btnext_bdiBtn1" android:layout_marginBottom="30dp"/>
+
+</LinearLayout>
 
 </ScrollView>
