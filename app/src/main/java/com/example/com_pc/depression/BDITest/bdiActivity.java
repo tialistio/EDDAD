@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.com_pc.depression.MainActivity;
 import com.example.com_pc.depression.R;
+import com.example.com_pc.depression.ResultListActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -71,28 +72,6 @@ public class bdiActivity extends AppCompatActivity {
         bdiBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                // get the counter
-                try {
-                    db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            counterbdi = documentSnapshot.getDouble("counter");
-
-                            counterbdi = counterbdi + 1;
-                            Toast.makeText(bdiActivity.this, "Main counter " + String.valueOf(counterbdi), Toast.LENGTH_SHORT).show();
-
-                            Map<String, Object> newvalue = new HashMap<>();
-                            newvalue.put("counter", counterbdi);
-
-                            db.collection("users").document(user_id).update(newvalue);
-                        }
-                    });
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-                //======================
-
 
                 //====================== upload the date
                 db = FirebaseFirestore.getInstance();
@@ -105,9 +84,36 @@ public class bdiActivity extends AppCompatActivity {
                 bdiSum = 0;
                 upload_score();
                 //update_counter();
-                Toast.makeText(bdiActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
-                Intent bdiIntent2 = new Intent(bdiActivity.this,bdiFinish.class);
-                bdiActivity.this.startActivity(bdiIntent2);
+
+                // get the counter
+
+                db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        counterbdi = documentSnapshot.getDouble("counter");
+
+                        counterbdi = counterbdi + 1;
+                        Toast.makeText(bdiActivity.this, "Main counter " + String.valueOf(counterbdi), Toast.LENGTH_SHORT).show();
+
+                        Map<String, Object> newvalue = new HashMap<>();
+                        newvalue.put("counter", counterbdi);
+
+                        db.collection("users").document(user_id).update(newvalue);
+
+                        if(counterbdi >= 3.0){
+                            Intent resultIntent = new Intent(bdiActivity.this, ResultListActivity.class);
+                            bdiActivity.this.startActivity(resultIntent);
+                        }else {
+                            Intent bdiIntent2 = new Intent(bdiActivity.this,bdiFinish.class);
+                            bdiActivity.this.startActivity(bdiIntent2);
+                        }
+                    }
+                });
+
+
+                //======================
+                //Toast.makeText(bdiActivity.this, "Id = " + user_id, Toast.LENGTH_SHORT).show();
+
             }
         });
 //============================================================================================
