@@ -55,8 +55,8 @@ public class ResultListActivity extends AppCompatActivity {
         listView =(ListView)findViewById(R.id.listView);
         resultList = new ArrayList<Result>();
 
-        date = get_result_data();
-        Toast.makeText(ResultListActivity.this, "dateget : " + date + "lisname : " + listname, Toast.LENGTH_SHORT).show();
+        String dateget = get_result_data();
+        Toast.makeText(ResultListActivity.this, "dateget : " + dateget , Toast.LENGTH_SHORT).show();
 
         resultList.add(new Result("BDI 첫 번째 결과",date));
         //resultList.add(new Result("BDI 첫 번째 결과","2018-06-06"));
@@ -90,7 +90,7 @@ public class ResultListActivity extends AppCompatActivity {
                     DocumentSnapshot document = task.getResult();
                     if(document.exists()){
                         //Toast.makeText(MainActivity.this, "DocumentSnapshot data : " + document.getData(), Toast.LENGTH_SHORT).show();
-                        date = document.getString("date");
+                        date = task.getResult().getString("date");
 
                         Toast.makeText(ResultListActivity.this, "date : " + date, Toast.LENGTH_SHORT).show();
                     }

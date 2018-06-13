@@ -19,6 +19,7 @@ import com.example.com_pc.depression.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -265,7 +266,7 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue);
+        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
 
     }
 
@@ -280,9 +281,10 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").update(newvalue);
+        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
 
     }
+
 
     public void bdi_save_stringdata(String questionnum, String answer){
 
@@ -292,7 +294,7 @@ public class bdiActivity extends AppCompatActivity {
         Map<String, Object> newvalue = new HashMap<>();
         newvalue.put(questionnum, answer);
 
-        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue);
+        db.collection("users").document(user_id).collection("BDI").document("answer").set(newvalue, SetOptions.merge());
 
     }
     public void add_sum(int score){

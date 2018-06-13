@@ -180,6 +180,40 @@ android:layout_height="match_parent">
             </RadioGroup>
         </TableRow>
         <TableRow
+            android:id="@+id/tr16"
+            android:layout_width="0dp"
+            android:weightSum="2"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_weight="0"
+                android:paddingLeft="8dp"
+                android:text="최근 이성과 헤어졌습니까?" />
+
+            <RadioGroup
+                android:id="@+id/rg16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rg16_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/rg16_n"
+                    android:layout_width="32dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="no" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
             android:id="@+id/tr6"
             android:layout_width="0dp"
             android:weightSum="2"
@@ -350,42 +384,6 @@ android:layout_height="match_parent">
             </RadioGroup>
         </TableRow>
         <TableRow
-            android:id="@+id/tr32"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:paddingBottom="15dp"
-            >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="43dp"
-                android:layout_weight="0"
-                android:paddingLeft="8dp"
-                android:text="가정의 재정 상태가 좋지 않다고 생각하십니까?" />
-
-            <RadioGroup
-                android:id="@+id/rg10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rg10_y"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Yes" />
-
-                <RadioButton
-                    android:id="@+id/rg10_n"
-                    android:layout_width="32dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:text="no" />
-            </RadioGroup>
-        </TableRow>
-        <TableRow
             android:id="@+id/tr13"
             android:layout_width="0dp"
             android:layout_height="43dp"
@@ -512,7 +510,7 @@ android:layout_height="match_parent">
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:paddingLeft="8dp"
-                android:text="혹은 가정의 재정 상태가 평범하다고 생각하십니까?" />
+                android:text="가정의 재정 상태가 평범하다고 생각하십니까?" />
 
             <RadioGroup
                 android:id="@+id/rg11"
