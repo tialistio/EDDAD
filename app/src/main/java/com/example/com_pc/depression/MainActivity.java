@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     //=================================================
     public static int Idnum, count;
     public int intcounter;
-    public String counter;
+    double counter;
     FirebaseFirestore db;
     //=================================================
     public static String deviceId;
@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "Id not null", Toast.LENGTH_SHORT).show();
         //==================================================================
         //결과 확인 Intent 이동
-        TextView resultButton = (TextView)findViewById(R.id.resultButton);
-        resultButton.setOnClickListener(new View.OnClickListener(){
+        TextView resultButton = (TextView) findViewById(R.id.resultButton);
+        resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Intent resultIntent = new Intent(MainActivity.this,ResultListActivity.class);
+            public void onClick(View view) {
+                Intent resultIntent = new Intent(MainActivity.this, ResultListActivity.class);
                 MainActivity.this.startActivity(resultIntent);
             }
         });
@@ -159,54 +159,33 @@ public class MainActivity extends AppCompatActivity {
         diagButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    db.collection("users").document(user_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            counter = documentSnapshot.getDouble("counter");
+                        }
+                    });
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
 
+                //Toast.makeText(MainActivity.this, "counter : " + String.valueOf(counter), Toast.LENGTH_SHORT).show();
 
-              //  if(intcounter==0){
+                if(counter==0) {
+
                     Intent diagIntent = new Intent(MainActivity.this, diagnosisActivity.class);
                     MainActivity.this.startActivity(diagIntent);
-               // }
-               // else {
-                    //Intent bdiStart = new Intent(MainActivity.this, com.example.com_pc.depression.BDITest.bdiStart.class);
-                    //MainActivity.this.startActivity(bdiStart);
-               //}
+                }
+                else {
+                    Intent bdiStart = new Intent(MainActivity.this, com.example.com_pc.depression.BDITest.bdiStart.class);
+                    MainActivity.this.startActivity(bdiStart);
+                }
             }
         });
 
     }
 
-    //make a class for the document
-    public class userdata_fb {
-        public String fieldname;
-        public String fieldvalue;
-    }
 
-    //===============================
-
-    public void get_counter() {
-        DocumentReference userRef = db.collection("users").document(user_id);
-        userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                counter = documentSnapshot.getString("couter");
-            }
-        });
-
-
-        //========================= second way to get data
-        /*db.collection("users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                String counter = task.getResult().getString("counter");
-                Toast.makeText(MainActivity.this, "counter : " + counter, Toast.LENGTH_SHORT).show();
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MainActivity.this, "get failde with" + e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });*/
-        intcounter = Integer.parseInt(counter);
-        Toast.makeText(MainActivity.this, "counter : " + intcounter, Toast.LENGTH_SHORT).show();
-    }
 }
