@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -38,23 +39,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques1"
                     android:layout_width="233dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="나이 : "
-                    android:textSize="15dp"
-                    android:id="@+id/ques1"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans1"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -65,23 +66,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques2"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="성별 : "
-                    android:textSize="15dp"
-                    android:id="@+id/ques2"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans2"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans2"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -92,23 +93,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques3"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="흡연 여부 : "
-                    android:textSize="15dp"
-                    android:id="@+id/ques3"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans3"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -119,23 +120,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques4"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="음주 여부 : "
-                    android:textSize="15dp"
-                    android:id="@+id/ques4"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans4"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans4"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -146,23 +147,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques5"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="친구와의 관계가 좋지 않은가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques5"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans5"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans5"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -173,23 +174,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques6"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="가장 친한 친구와 멀어진 적이 있는가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques6"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans6"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -200,23 +201,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques7"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="선생님과의 관계가 좋지 않은가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques7"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans7"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans7"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -227,23 +228,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques8"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="형제/자매 사이의 관계가 좋지 않은가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques8"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans8"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans8"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -254,23 +255,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques9"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="부모님과의 관계가 좋지 않은가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques9"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans9"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans9"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -281,23 +282,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques10"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="부모님이 부부싸움 한 적이 있는가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques10"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans10"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans10"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -308,23 +309,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques11"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:text="가정의 재정 상태가 좋지 않은가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques11"/>
+                    android:text="애인과 헤어졌어요? "
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans11"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans11"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -335,23 +336,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques12"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="질병 혹은 심하게 다친 경험이 있는가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques12"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans12"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans12"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -362,23 +363,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques13"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="가족 중 심각한 질병을 앓는 사람이 있는가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques13"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans13"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans13"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -389,23 +390,23 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques14"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="부모님이 이혼 또는 별거 중인가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques14"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans14"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans14"/>
+                    android:textSize="15dp" />
             </TableRow>
 
             <TableRow
@@ -416,28 +417,36 @@
                 android:weightSum="1">
 
                 <TextView
+                    android:id="@+id/ques15"
                     android:layout_width="103dp"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="가정의 재정 상태가 평범하다고 생각하는가? "
-                    android:textSize="15dp"
-                    android:id="@+id/ques15"/>
+                    android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/ans15"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_column="0"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
-                    android:textSize="15dp"
-                    android:id="@+id/ans15"/>
+                    android:textSize="15dp" />
             </TableRow>
         </TableLayout>
 
         <TextView
             android:id="@+id/tt0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/tt1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_column="0"
