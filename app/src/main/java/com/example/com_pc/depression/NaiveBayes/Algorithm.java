@@ -25,6 +25,8 @@ import com.google.firebase.firestore.SetOptions;
 
 import java.util.Map;
 
+import static com.example.com_pc.depression.MainActivity.user_id;
+
 public class Algorithm extends AppCompatActivity{
 
     public static final String TAG = "user";
@@ -55,9 +57,9 @@ public class Algorithm extends AppCompatActivity{
 
                 final DocumentReference docDepressionData =mFirestore.collection("Userdata").document("data");
 
-                final DocumentReference docUserData = mFirestore.collection("Users").document("1");
+                final DocumentReference docUserData = mFirestore.collection("users").document(user_id);
 
-                final CollectionReference colBDI3 = mFirestore.collection("Users").document("1").collection("BDI3");
+                final CollectionReference colBDI3 = mFirestore.collection("users").document(user_id).collection("BDI3");
 
                 final Query queryBDI3 = colBDI3.orderBy("date", Query.Direction.DESCENDING).limit(1);
 //

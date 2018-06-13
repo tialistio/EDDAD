@@ -32,6 +32,8 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
+import static com.example.com_pc.depression.MainActivity.user_id;
+
 public class ResultActivity extends AppCompatActivity {
     TextView ans1;
     TextView ans2;
@@ -83,18 +85,18 @@ public class ResultActivity extends AppCompatActivity {
          ans15 = findViewById(R.id.ans15);
          tt1 = findViewById(R.id.tt1);
 
-        TextView tt1 = (TextView)findViewById(R.id.tt0);  //수정
+        TextView tt1 = findViewById(R.id.tt0);  //수정
         tt1.setText(intent.getStringExtra("Title"));
         // tt2.setText(intent.getStringExtra("date"));
 
         mFirestore = FirebaseFirestore.getInstance();
 
         final DocumentReference docDepressionData =mFirestore.collection("Userdata").document("data");
-        final DocumentReference docUserData = mFirestore.collection("Users").document("1");
+        final DocumentReference docUserData = mFirestore.collection("users").document(user_id);
 
-        final CollectionReference colBDI1 = mFirestore.collection("Users").document("1").collection("BDI1");
-        final CollectionReference colBDI2 = mFirestore.collection("Users").document("2").collection("BDI2");
-        final CollectionReference colBDI3 = mFirestore.collection("Users").document("3").collection("BDI3");
+        final CollectionReference colBDI1 = mFirestore.collection("users").document(user_id).collection("BDI1");
+        final CollectionReference colBDI2 = mFirestore.collection("users").document(user_id).collection("BDI2");
+        final CollectionReference colBDI3 = mFirestore.collection("users").document(user_id).collection("BDI3");
 
         final Query queryBDI1 = colBDI1.orderBy("date", Query.Direction.DESCENDING).limit(1);
         final Query queryBDI2 = colBDI2.orderBy("date", Query.Direction.DESCENDING).limit(1);
@@ -182,7 +184,8 @@ public class ResultActivity extends AppCompatActivity {
         double notDep = depressionData.notDepProbability();
         double depProbability = dep / (dep + notDep);
         double notDepProbability = notDep / (dep + notDep);
-        tt1.setText("사용자가 우울증에 걸릴 확률은 "+String.valueOf(depProbability) +", 우울증에 걸리지 않을 확률은 "+String.valueOf(notDepProbability));
+        String message = R.string.dep_result1 +String.valueOf(depProbability)+ R.string.dep_result2 +String.valueOf(notDepProbability);
+        tt1.setText(message);
 
 
         if(scores[2]<=9)
