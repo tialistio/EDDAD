@@ -9,5 +9,7 @@
     <string name="passcode_wrong">Wrong passcode, please try again.</string>
     <string name="disable_passcode">Disable passcode</string>
     <string name="enable_passcode">Enable passcode</string>
+    <string name="dep_result1">사용자가 우울증에 걸릴 확률은 </string>
+    <string name="dep_result2">, 우울증에 걸리지 않을 확률은 </string>
 
 </resources>
