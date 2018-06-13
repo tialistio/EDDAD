@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     counter = documentSnapshot.getDouble("counter");
+                    Toast.makeText(MainActivity.this, "Main counter " + String.valueOf(counter), Toast.LENGTH_SHORT).show();
                 }
             });
         }
